@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { app } from "@/firebase"
 import { CiLogout, CiMedicalCase } from "react-icons/ci";
 
+
 function Header() {
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
