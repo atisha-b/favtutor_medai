@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import Groq from "groq-sdk";
 
 const groq = new Groq({
-  apiKey: "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",
+  apiKey: "",
 });
 
 const SYSTEM_MESSAGE = {
