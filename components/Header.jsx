@@ -5,7 +5,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { app } from "@/firebase"
 import { CiLogout, CiMedicalCase } from "react-icons/ci";
-
+import { RxAvatar } from "react-icons/rx";
 
 function Header() {
   const [user, setUser] = useState(null);
@@ -54,7 +54,7 @@ function Header() {
   }, [dropdownOpen]);
 
   return (
-    <div className="bg-[#c1ead7] sticky top-0 shadow-md shadow-[#99b8a9] lg:py-2 items-center py-2">
+    <div className="bg-[#c1ead7] z-50 sticky top-0 shadow-md shadow-[#99b8a9] lg:py-2 items-center py-2">
       <div className="hidden md:mx-10 md:flex md:justify-between">
         <Link href="/" className="font-extrabold text-3xl text-gray-100 flex align-center mb-5 mt-2">
           <div className="flex items-center space-x-2">
@@ -74,7 +74,7 @@ function Header() {
                 <div className="relative" ref={dropdownRef}>
                   <button onClick={toggleDropdown} className="flex items-center space-x-4 focus:outline-none ml-3">
                     <div className="rounded-full border-2 border-gray-500 p-1">
-                      <img src={user.photoURL || "https://via.placeholder.com/150"} alt="User Profile" className="rounded-full w-10 h-10" />
+                      <img src={user.photoURL || <RxAvatar />} alt="User Profile" className="rounded-full w-10 h-10" />
                     </div>
                   </button>
                   {dropdownOpen && (

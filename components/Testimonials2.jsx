@@ -6,41 +6,35 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MdOutlineRateReview } from "react-icons/md";
 const reviews = [
   {
     description:
-      "This platform has revolutionized how we stay updated on SaaS and AI trends. The real-time updates and in-depth insights are invaluable for our strategic planning.",
+      "Med-AI has really helped me out during those late night health scares! When my son had a fever come up one night out of the blue; I was able to get prompt and comforting advice, about when its necessary to see a doctor. The chatbots explanations are easy to understand and I like how it always suggests reaching out, to a doctor for serious issues.",
     stars: 5,
-    author: "John Doe",
-    position: "CEO of Tech Innovations",
+    author: "Sarah Thompson, 35",
+    position: "Working Professional",
   },
   {
     description:
-      "This platform has revolutionized how we stay updated on SaaS and AI trends. The real-time updates and in-depth insights are invaluable for our strategic planning.",
+      "Having diabetes requires me to stay informed, about my health needs. The Med-AI app has become my choice for learning about how medications interact with each other and keeping track of my symptoms and receiving nutritional guidance. It’s akin, to having a informed health buddy with me all the time.",
     stars: 5,
-    author: "John Doe",
-    position: "CEO of Tech Innovations",
+    author: "Michael Rodriguez, 42",
+    position: "Chronic Condition Manager",
   },
   {
     description:
-      "This platform has revolutionized how we stay updated on SaaS and AI trends. The real-time updates and in-depth insights are invaluable for our strategic planning.",
+      "As a person who struggles with anxiety related to health concerns I find Med-AI to be extremely beneficial. It offers accurate details that assist me in comprehending my symptoms without descending into thoughts. The empathetic approach and backed answers have significantly improved my knowledge about health.",
     stars: 5,
-    author: "John Doe",
-    position: "CEO of Tech Innovations",
+    author: "Emily Chen,  28",
+    position: "Graduate Student",
   },
   {
     description:
-      "This platform has revolutionized how we stay updated on SaaS and AI trends. The real-time updates and in-depth insights are invaluable for our strategic planning.",
+      "I had my doubts, about AI health tools initially. Med-AI has really won me over! It simplifies jargon from my doctors notes and keeps me on track with my medication schedule while offering clear explanations about my health issues. I find it very easy to use. It has boosted my confidence, in taking charge of my healthcare.",
     stars: 5,
-    author: "John Doe",
-    position: "CEO of Tech Innovations",
-  },
-  {
-    description:
-      "This platform has revolutionized how we stay updated on SaaS and AI trends. The real-time updates and in-depth insights are invaluable for our strategic planning.",
-    stars: 5,
-    author: "John Doe",
-    position: "CEO of Tech Innovations",
+    author: "Robert Kim, 55",
+    position: "Retired Teacher ",
   },
 ];
 
@@ -79,12 +73,7 @@ const Testimonials = () => {
             className=" bg-gray-100 text-black  border-2 border-gray-300 rounded-lg min-w-[300px] max-w-[300px] border-gradient p-5 space-y-3"
           >
             <Star stars={5} />
-            <Image
-              src="/images/review-icon.svg"
-              height={60}
-              width={60}
-              alt="review icon"
-            />
+            <MdOutlineRateReview />
             <div className="text-sm">{review.description}</div>
             <div className="mt-4">
               <div className="text-xs">{review.author}</div>

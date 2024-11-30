@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Header from "../components/Header";
 import FooterComp from "../components/FooterComp";
@@ -5,6 +6,7 @@ import MainPageRight from "../components/MainPageRight";
 import MainPageLeft from "../components/MainPageLeft";
 import HeroSection from "../components/HeroSection";
 import BotPage from "../botComponent/BotPage";
+import ChatBotIcon from '../botComponent/ChatBotIcon';
 
 
 export default function Home() {
@@ -24,8 +26,9 @@ export default function Home() {
           <HeroSection/>
         </div>
         <div>
-          <BotPage />
+          <ChatBotIcon />
         </div>
+        
   
         <div>
           <FooterComp />

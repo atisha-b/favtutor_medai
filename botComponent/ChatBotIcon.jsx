@@ -1,8 +1,9 @@
+"use client";
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { useRouter } from 'next/navigation'; 
 import { getAuth } from 'firebase/auth';
 import { app } from '@/firebase';
+import styled from 'styled-components';
 
 const IconButton = styled.button`
   position: fixed;
@@ -27,11 +28,9 @@ const IconButton = styled.button`
   }
 `;
 
-
-
 const ChatBotIcon = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const router = useRouter(); // Correctly import and use useRouter
+  const router = useRouter();
   const auth = getAuth(app);
 
   useEffect(() => {
@@ -43,24 +42,27 @@ const ChatBotIcon = () => {
 
   const handleClick = () => {
     if (isLoggedIn) {
-      router.push('/ChatWindow'); // Redirect to ChatWindow
+      router.push('/ChatWindow');
     } else {
-      router.push('/login'); // Redirect to login form if not authenticated
+      router.push('/login');
     }
   };
 
   return (
-    <>
-      <div
-        className="fixed bottom-4 right-4 cursor-pointer rounded-full "
-        onClick={handleClick}
-        style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}
-      >
-        <IconButton>
-          <img src="https://easuk.co.uk/wp-content/uploads/2023/05/healthcare-01.png" alt="Chatbot Icon" width="40" height="40" />
-        </IconButton>
-      </div>
-    </>
+    <div
+      className="fixed bottom-4 right-4 cursor-pointer rounded-full"
+      onClick={handleClick}
+      style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
+    >
+      <IconButton>
+        <img
+          src="https://easuk.co.uk/wp-content/uploads/2023/05/healthcare-01.png"
+          alt="Chatbot Icon"
+          width="40"
+          height="40"
+        />
+      </IconButton>
+    </div>
   );
 };
 

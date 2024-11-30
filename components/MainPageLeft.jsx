@@ -11,19 +11,24 @@ export default function About() {
           WE HELP ANALYZE YOUR HEALTH
         </div>
         <div className="font-semibold text-base lg:text-lg text-center lg:text-left">
-          standing in a queue can be overwhelming sometimes
+          Your online doctor!
         </div>
-        <div className=" lg:max-w-[70%] text-center lg:text-left ">
-          That's where we come in. <span className="hidden lg:flex">
-          We utilize Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Minus sequi minima vero voluptatibus,
-          rem quisquam cum, quod repudiandae delectus accusamus obcaecati
-          repellat distinctio?
+        <div className=" lg:max-w-[70%] text-center lg:text-left transition-transform duration-500 ease-in-out">
+        Medical diagnosis is now at your fingertips. <span className="hidden lg:flex">
+          Chat about any health related questions, general queries for research or personal health. Set up your user profile for the bot to provide an accurate diagnosis.  
           </span>
         </div>
         <div className="pt-10 flex space-x-10 justify-center lg:justify-start">
-          <div className="bg-green-800 text-white p-1 lg:px-3 lg:p-2  rounded-md ">Upload your reports</div>
-          <div className="bg-gray-200 text-black border border-gray-700  p-1 lg:px-5 lg:p-2  rounded-md">Fill your reports</div>
+        <Link href="/dashboard">
+          <div className="bg-green-800 text-white p-1 lg:px-3 lg:p-2 rounded-md cursor-pointer hover:bg-green-700">
+            Go to Dashboard
+          </div>
+        </Link>
+        <Link href="/fill-up-form">
+          <div className="bg-gray-200 text-black border border-gray-700 p-1 lg:px-5 lg:p-2 rounded-md cursor-pointer hover:bg-gray-300">
+            Fill your reports
+          </div>
+        </Link>
         </div>
       </div>
     </div>

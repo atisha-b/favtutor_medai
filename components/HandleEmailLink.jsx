@@ -2,12 +2,12 @@
 import { useEffect } from "react";
 import { getAuth, isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { auth } from "@/firebase";
+import { auth,app } from "@/firebase";
 
 const HandleEmailLink = () => {
   const router = useRouter();
-  const auth = getAuth();
-
+  const auth = getAuth(app);
++
   useEffect(() => {
     const handleEmailLink = async () => {
       if (isSignInWithEmailLink(auth, window.location.href)) {

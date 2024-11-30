@@ -1,9 +1,8 @@
-// src/app/api/chat/route.ts
 import { NextResponse } from "next/server";
-import Groq from "groq-sdk";
+import { OpenAI } from "openai";
 
-const groq = new Groq({
-  apiKey: "",
+const openai = new OpenAI({
+  apiKey: "", // Use an environment variable for security
 });
 
 const SYSTEM_MESSAGE = {
@@ -17,20 +16,23 @@ const SYSTEM_MESSAGE = {
     - Avoid making definitive diagnoses
     - Include relevant health disclaimers when appropriate`,
 };
+
 export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
+
     const fullMessages = [SYSTEM_MESSAGE, ...messages];
-    const completion = await groq.chat.completions.create({
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
       messages: fullMessages,
-      model: "mixtral-8x7b-32768",
       temperature: 0.1,
       max_tokens: 1000,
     });
 
     return NextResponse.json({ response: completion.choices[0].message });
-  } catch (error) {
-    console.error("Error:", error);
+  } catch (error: any) {
+    console.error("Error:", error.message || error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
